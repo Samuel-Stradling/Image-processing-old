@@ -3,15 +3,13 @@ from PIL import Image
 import cv2
 import time
 
+
 def get_color(image):
     t1_start = time.process_time()
 
     img = cv2.imread(image)
     height = img.shape[0]
     width = img.shape[1]
-
-    print(f"height: {height} \nwidth: {width}")
-
 
     im = Image.open(image)
     rgb_im = im.convert("RGB")
