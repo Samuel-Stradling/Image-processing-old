@@ -1,5 +1,5 @@
 import pygame
-from color import averageRGB
+from color import get_color
 
 pygame.init()
 
@@ -12,15 +12,15 @@ pygame.display.set_caption("Average Color")
 running = True
 
 clock = pygame.time.Clock()
+color = get_color("testImage.jpg")
 
 # -------- Main Program Loop -----------
 while running:
     pygame.display.update()
-    screen.fill(averageRGB)
+    screen.fill(color)
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
-
 
     clock.tick(30)
 
