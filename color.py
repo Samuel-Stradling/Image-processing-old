@@ -24,6 +24,4 @@ for rgb in colors:
     gValues.append(rgb[1])
     bValues.append(rgb[2])
 
-print(mode(rValues))
-print(mode(gValues))
-print(mode(bValues))
+averageRGB = (mode(rValues), mode(gValues), mode(bValues))
