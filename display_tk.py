@@ -19,7 +19,7 @@ window.title("Average Color")
 
 
 def select_file():
-    filetypes = (("image files", "*.jpg"), ("All files", "*.*"))
+    filetypes = (("image files", "*.jpg"), ("All files", "*.*"), ("image files", "*.png"))
 
     filename = fd.askopenfilename(
         title="Open a file", initialdir="/", filetypes=filetypes
