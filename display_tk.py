@@ -1,28 +1,24 @@
-import pygame
+from tkinter import *
 from color import get_color
 
-pygame.init()
+def _from_rgb(rgb):
+    """translates an rgb tuple of int to a tkinter friendly color code
+    """
+    r, g, b = rgb
+    return f'#{r:02x}{g:02x}{b:02x}'
+
+window = Tk()
 
 
-size = (900, 500)
-screen = pygame.display.set_mode(size)
+size = "900x500"
+window.geometry(size)
+window.title("Average Color")
 
-pygame.display.set_caption("Average Color")
 
-running = True
-
-clock = pygame.time.Clock()
 color = get_color("testImage.jpg")
+window.config(background=_from_rgb(color))
 
-# -------- Main Program Loop -----------
-while running:
-    pygame.display.update()
-    screen.fill(color)
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            running = False
-
-    clock.tick(30)
+window.mainloop()
 
 
-pygame.quit()
+
