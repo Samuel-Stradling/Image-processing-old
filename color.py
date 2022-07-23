@@ -4,6 +4,13 @@ import cv2
 import time
 
 
+def average(arr):
+    total = 0
+    for value in arr:
+        total += value
+    return total // len(arr)
+
+
 def get_color(image):
     t1_start = time.process_time()
 
@@ -30,6 +37,8 @@ def get_color(image):
     t1_stop = time.process_time()
     processTime = t1_stop - t1_start
     print(processTime)
-    averageRGB = (mode(rValues), mode(gValues), mode(bValues))
+
+    averageRGB = (average(rValues), average(gValues), average(bValues))
+    # averageRGB = (mode(rValues), mode(gValues), mode(bValues))
     print(averageRGB)
     return averageRGB
