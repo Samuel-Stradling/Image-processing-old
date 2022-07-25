@@ -9,3 +9,5 @@ def compress(filename):
     img.save("Compressed_"+filename, optimize=True, quality=30)
     return "Compressed_"+filename
     #the compressed string is being appended to the whole path, instead of the filename
+
+#https://www.codegrepper.com/code-examples/python/how+to+reduce+number+of+pixels+of+image+using+pil
