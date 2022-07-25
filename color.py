@@ -17,6 +17,8 @@ def get_color(image):
     img = cv2.imread(image)
     height = img.shape[0]
     width = img.shape[1]
+    dimensions = (width, height)
+    print(dimensions)
 
     im = Image.open(image)
     rgb_im = im.convert("RGB")
