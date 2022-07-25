@@ -5,6 +5,7 @@ import time
 
 
 def average(arr):
+    """Gets average color for each r g and b value"""
     total = 0
     for value in arr:
         total += value
