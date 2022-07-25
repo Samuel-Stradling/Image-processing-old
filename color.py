@@ -35,10 +35,10 @@ def get_color(image):
         bValues.append(rgb[2])
 
     t1_stop = time.process_time()
-    processTime = t1_stop - t1_start
-    print(processTime)
 
     averageRGB = (average(rValues), average(gValues), average(bValues))  # to get MEAN
+    processTime = t1_stop - t1_start
+    print(processTime)
     # averageRGB = (mode(rValues), mode(gValues), mode(bValues)) #to get MODE
     print(averageRGB)
     return averageRGB
