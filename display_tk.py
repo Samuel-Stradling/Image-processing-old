@@ -26,8 +26,10 @@ def select_file():
     filename = fd.askopenfilename(
         title="Open a file", initialdir="/", filetypes=filetypes
     )
-    get_change_color(filename)
-    #print(f"\n{filename}\n")
+
+    compress(filename) 
+    get_change_color("Compressed_"+filename)
+    
 
 
 def get_change_color(directory):
