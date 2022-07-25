@@ -1,13 +1,16 @@
-#compress an image, save it, then access and get the color of the compressed image
-#delete the compressed image after use
-import PIL
-import os
-import glob
 from PIL import Image
-def compress(filename):
-    img = Image.open(filename)
-    img.save("Compressed_"+filename, optimize=True, quality=30)
-    return "Compressed_"+filename
-    #the compressed string is being appended to the whole path, instead of the filename
-
-#https://www.codegrepper.com/code-examples/python/how+to+reduce+number+of+pixels+of+image+using+pil
+def compress(directory):
+    # set the base width of the result
+    basewidth = 300
+    img = Image.open(directory)
+    # determining the height ratio
+    wpercent = (basewidth/float(img.size[0]))
+    hsize = int((float(img.size[1])*float(wpercent)))
+    # resize image and save
+    img = img.resize((basewidth,hsize), Image.ANTIALIAS)
+    lastslash = directory.rfind("/") + 1
+    directory = list(directory)
+    directory.insert(lastslash, "C")
+    directory = ''.join(directory)
+    img.save(directory)
+compress("/Users/sam/Pictures/3.jpg")
