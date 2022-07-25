@@ -2,6 +2,7 @@ from tkinter import *
 from tkinter import filedialog as fd
 from tkinter import ttk
 from color import get_color
+from compression import compress
 
 
 def _from_rgb(rgb):
@@ -19,6 +20,7 @@ window.title("Average Color")
 
 
 def select_file():
+    """Selects file using tkinter gui"""
     filetypes = (("image files", "*.jpg"), ("All files", "*.*"), ("image files", "*.png"))
 
     filename = fd.askopenfilename(
@@ -29,6 +31,7 @@ def select_file():
 
 
 def get_change_color(directory):
+    """Gets rid of the labels and updates background color"""
     color = get_color(directory)
     textLabel.pack_forget()
     open_button.pack_forget()
