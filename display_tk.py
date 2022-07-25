@@ -3,6 +3,7 @@ from tkinter import filedialog as fd
 from tkinter import ttk
 from color import get_color
 from compression import compress
+import os
 
 
 def _from_rgb(rgb):
@@ -27,8 +28,8 @@ def select_file():
         title="Open a file", initialdir="/", filetypes=filetypes
     )
 
-    compress(filename) 
-    get_change_color("Compressed_"+filename)
+    filename = compress(filename) 
+    get_change_color(filename)
     
 
 
@@ -38,6 +39,8 @@ def get_change_color(directory):
     textLabel.pack_forget()
     open_button.pack_forget()
     window.config(background=_from_rgb(color))
+    os.remove(directory)
+
 
 
 global textLabel
