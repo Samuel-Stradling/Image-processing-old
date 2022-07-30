@@ -1,6 +1,6 @@
 import cv2
-from compressionForVideo import compress
-from colorForVideo import get_color
+from Vcompression import compress
+from Vcolor import get_color
 import os
 
 vidcap = cv2.VideoCapture("test.mp4")
