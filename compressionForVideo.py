@@ -9,5 +9,4 @@ def compress(directory):
     # resize image and save
     img = img.resize((widthRescale,hsize), Image.Resampling.LANCZOS)
     img.save(directory)
-    return directory
 #compress("/Users/sam/Pictures/mac tonight/2.jpg")
