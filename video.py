@@ -3,6 +3,7 @@ from Vcompression import compress
 from Vcolor import get_color
 import os
 import pygame
+import time
 
 #LOOK INTO THREADING TO CONTROL SPEED OF ANALYSIS
 def video_color():
@@ -19,7 +20,7 @@ def video_color():
 
         clock.tick(60)
 
-        vidcap = cv2.VideoCapture("test.mp4")
+        vidcap = cv2.VideoCapture("test2.mp4")
         success, image = vidcap.read()
         count = 0
         while success:
@@ -37,6 +38,12 @@ def video_color():
             os.remove(filename)
             success, image = vidcap.read()
             count += 1
+            if count == 0:
+                success = False
+                break
+        if success == False:
+            time.sleep(5)
+            break
         
 
     pygame.quit()
