@@ -20,14 +20,14 @@ def video_color():
 
         clock.tick(60)
 
-        vidcap = cv2.VideoCapture("test2.mp4")
+        vidcap = cv2.VideoCapture("test.mp4")
         success, image = vidcap.read()
         count = 0
         while success:
             #LOOK INTO THREADING TO WAIT FOR EACH FRAME TO BE SCANNED CONSECUTIVELY
             filename = "/Users/sam/Programming/Image-processing/frames/frame%d.jpg" % count
             cv2.imwrite(filename, image)
-            if count % 8 == 0:
+            if count % 5 == 0:
         
                 compress(filename)
                 print(f"\nFrame {count}")
