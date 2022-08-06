@@ -24,4 +24,4 @@ def compress(directory):
     return directory
 
 
-# compress("/Users/sam/Pictures/mac tonight/2.jpg")
+

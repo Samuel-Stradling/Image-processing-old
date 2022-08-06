@@ -1,5 +1,8 @@
 from PIL import Image
 def compress(directory):
+
+    """resizes the given image and saves as C_image.jpg. Returns the new directory"""
+
     # set the base width of the result
     widthRescale = 300 #change to control rescaling of image
     img = Image.open(directory)
@@ -9,4 +12,3 @@ def compress(directory):
     # resize image and save
     img = img.resize((widthRescale,hsize), Image.Resampling.LANCZOS)
     img.save(directory)
-#compress("/Users/sam/Pictures/mac tonight/2.jpg")
