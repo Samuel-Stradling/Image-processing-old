@@ -19,7 +19,7 @@ def frame_color(frame):
 
 
 def play_video():
-    cap = cv2.VideoCapture("test3.mp4")
+    cap = cv2.VideoCapture("test2.mp4")
     frameNo = 0
     while cap.isOpened():
         ret, frame = cap.read()
