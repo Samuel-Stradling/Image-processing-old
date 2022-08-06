@@ -1,3 +1,5 @@
+# Allow audio playback with the video.
+
 # still look into threads → may work better than current solution
 
 # try to implement on raspberry pi
