@@ -51,7 +51,7 @@ textLabel.pack(pady=15)
 
 global open_button
 open_button = ttk.Button(window, width=35, text="Open a File", command=select_file)
-# open_button.configure(command=lambda: get_change_color(textLabel, open_button))
+#can only have one function for command, so select_file hosts change color
 open_button.pack()
 
 

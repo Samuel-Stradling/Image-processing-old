@@ -1,0 +1,3 @@
+https://medium.datadriveninvestor.com/analyzing-video-using-python-opencv-and-numpy-5471cab200c4
+https://www.geeksforgeeks.org/python-process-images-of-a-video-using-opencv/
+https://medium.com/@Ralabs/the-beginners-guide-for-video-processing-with-opencv-aa744ec04abb
