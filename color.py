@@ -1,11 +1,13 @@
-from statistics import mode
+# from statistics import mode
 from PIL import Image
 import cv2
 import time
 
 
 def average(arr):
+
     """Gets average color for each r g and b value"""
+
     total = 0
     for value in arr:
         total += value
@@ -13,6 +15,12 @@ def average(arr):
 
 
 def get_color(image):
+
+    """gets the mean color of the given parameter image. Creates a list of r, g, and b values respectively
+    and gets the mean value for each of the lists. The process time is recorded and printed and the rgb
+    value is returned as a tuple"""
+
+    # starts a timer to record the process time taken
     t1_start = time.process_time()
 
     img = cv2.imread(image)
@@ -22,7 +30,9 @@ def get_color(image):
     print(dimensions)
 
     im = Image.open(image)
+    # converts the given hex values for the image into rgb using a method from PIL
     rgb_im = im.convert("RGB")
+
     colors = []
     for horElem in range(width - 1):
         for verElem in range(height - 1):
@@ -38,8 +48,8 @@ def get_color(image):
         bValues.append(rgb[2])
 
     t1_stop = time.process_time()
-
-    averageRGB = (average(rValues), average(gValues), average(bValues))  # to get MEAN
+    # to get MEAN
+    averageRGB = (average(rValues), average(gValues), average(bValues))
     # averageRGB = (mode(rValues), mode(gValues), mode(bValues)) #to get MODE
     processTime = t1_stop - t1_start
     print(processTime)
