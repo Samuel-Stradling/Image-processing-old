@@ -12,11 +12,16 @@ def average(arr):
 
 def get_color(image):
 
+    """OPTIMISED FOR VIDEO. Gets the mean color of the given parameter image. Creates a list of r, g, and b values respectively
+    and gets the mean value for each of the lists. The process time is recorded and printed and the rgb
+    value is returned as a tuple"""
+
     img = cv2.imread(image)
     height = img.shape[0]
     width = img.shape[1]
 
     im = Image.open(image)
+    # converts the given hex values for the image into rgb using a method from PIL
     rgb_im = im.convert("RGB")
     rValues = []
     gValues = []
