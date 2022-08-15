@@ -3,7 +3,6 @@ from Vcompression import compress
 from Vcolor import get_color
 import os
 import pygame
-import time
 
 
 def frame_color(frame):
