@@ -21,13 +21,13 @@ def get_color(image):
     value is returned as a tuple"""
 
     # starts a timer to record the process time taken
-    t1_start = time.process_time()
+    t1_start = time.time()
 
     img = cv2.imread(image)
     height = img.shape[0]
     width = img.shape[1]
-    dimensions = (width, height)
-    print(dimensions)
+    # dimensions = (width, height)
+    # print(dimensions)
 
     im = Image.open(image)
     # converts the given hex values for the image into rgb using a method from PIL
@@ -47,11 +47,11 @@ def get_color(image):
         gValues.append(rgb[1])
         bValues.append(rgb[2])
 
-    t1_stop = time.process_time()
+    t1_stop = time.time()
     # to get MEAN
     averageRGB = (average(rValues), average(gValues), average(bValues))
     # averageRGB = (mode(rValues), mode(gValues), mode(bValues)) #to get MODE
-    processTime = t1_stop - t1_start
+    processTime = abs(t1_start - t1_stop)
     print(processTime)
     print(averageRGB)
     return averageRGB
