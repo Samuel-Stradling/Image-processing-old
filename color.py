@@ -52,6 +52,6 @@ def get_color(image):
     averageRGB = (average(rValues), average(gValues), average(bValues))
     # averageRGB = (mode(rValues), mode(gValues), mode(bValues)) #to get MODE
     processTime = abs(t1_start - t1_stop)
-    print(processTime)
-    print(averageRGB)
+    print(f"Process time: {processTime}s")
+    print(f"rgb: {averageRGB}")
     return averageRGB
