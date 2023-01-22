@@ -31,7 +31,8 @@ def play_video():
     of the frame which is displayed with pygame.
     Scanning every frame is too slow so this does multiples [of 4]"""
 
-    cap = cv2.VideoCapture(0) # video stream from hdmi is same as webcam
+    cap = cv2.VideoCapture(0)  # video stream from hdmi is same as webcam
+    # replace '0' with "filename.mp4" for video
 
     # counter for the frames to allow for scanning of multiples of frames instead of each and every
     frameNo = 0
